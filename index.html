@@ -74,7 +74,66 @@ html, body { height: 100%; margin: 0; font-family: 'Arial', sans-serif; backgrou
 .nav-btn { padding: 12px 25px; border: none; border-radius: 12px; background: var(--accent); color: white; font-size: 15px; font-weight: 600; cursor: pointer; box-shadow: 0 6px 20px rgba(122,103,245,0.4); transition: all 0.3s ease; }
 .nav-btn:hover { background: #5f50c9; transform: translateY(-3px); box-shadow: 0 8px 25px rgba(122,103,245,0.5); }
 
-@media (max-width: 900px) { .details-panel { width: 100%; } .map-wrap { flex: 1 !important; } }
+
+@media (max-width: 900px) {
+  .details-panel {
+    width: 100vw;
+    right: 0;
+    left: 0;
+    top: 0;
+    height: 100vh;
+    padding: 20px 8px;
+    border-radius: 0;
+    box-shadow: none;
+    font-size: 16px;
+  }
+  .details-header {
+    padding: 0 10px;
+  }
+  .details-header h2 {
+    font-size: 22px;
+  }
+  .details-avatar {
+    width: 90px;
+    height: 90px;
+    margin: 0 auto 12px;
+  }
+  .details-content {
+    margin-top: 18px;
+    padding: 0 4px;
+  }
+  #detailsName {
+    font-size: 18px;
+  }
+  .details-description {
+    font-size: 15px;
+    margin-bottom: 12px;
+  }
+  .details-nav {
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 18px;
+  }
+  .nav-btn {
+    width: 100%;
+    font-size: 16px;
+    padding: 10px 0;
+    border-radius: 10px;
+  }
+  .app {
+    flex-direction: column;
+    height: 100vh;
+  }
+  .map-wrap {
+    height: 50vh;
+    min-height: 220px;
+    flex: none !important;
+  }
+  #map {
+    height: 100%;
+    min-height: 220px;
+  }
+}
 </style>
 </head>
 <body>
