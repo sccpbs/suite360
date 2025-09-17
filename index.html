@@ -229,8 +229,14 @@ function openDetails(index){
   detailsName.textContent=place.name;
   detailsDescription.textContent=place.desc;
 
-  detailsPanel.classList.add('open');
-  mapWrap.style.flex='0 0 73%'; // Mapa ocupa 58% da tela
+  // Responsivo: só adiciona classe 'open' se não for mobile
+  if(window.innerWidth > 900){
+    detailsPanel.classList.add('open');
+    mapWrap.style.flex='0 0 73%'; // Mapa ocupa 73% da tela
+  } else {
+    detailsPanel.classList.remove('open');
+    mapWrap.style.flex='none';
+  }
 
   detailsAvatar.classList.remove('show');
   detailsName.classList.remove('show');
@@ -249,8 +255,12 @@ function openDetails(index){
 }
 
 function closeDetails(){
-  detailsPanel.classList.remove('open');
-  mapWrap.style.flex='1'; // Volta a ocupar toda a tela
+  if(window.innerWidth > 900){
+    detailsPanel.classList.remove('open');
+    mapWrap.style.flex='1'; // Volta a ocupar toda a tela
+  } else {
+    mapWrap.style.flex='none';
+  }
   if(activeMarker) activeMarker.classList.remove('marker-active');
 }
 
