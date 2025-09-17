@@ -76,17 +76,18 @@ html, body { height: 100%; margin: 0; font-family: 'Arial', sans-serif; backgrou
 
 
 
+
 @media (max-width: 900px) {
   html, body {
-    height: 100vh;
+    height: auto;
     min-height: 100vh;
     overflow-x: hidden;
   }
   .app {
     flex-direction: column;
-    height: 100vh;
     min-height: 100vh;
     width: 100vw;
+    height: auto;
   }
   .map-wrap {
     width: 100vw;
@@ -102,17 +103,26 @@ html, body { height: 100%; margin: 0; font-family: 'Arial', sans-serif; backgrou
     border-radius: 0;
   }
   .details-panel {
+    position: static !important;
     width: 100vw;
-    right: 0;
-    left: 0;
-    top: 0;
-    height: 100vh;
+    height: auto;
     padding: 18px 6px 12px 6px;
     border-radius: 0;
     box-shadow: none;
     font-size: 15px;
-    overflow-y: auto;
-    z-index: 100;
+    overflow-y: visible;
+    z-index: 1;
+    opacity: 1 !important;
+    right: auto;
+    left: auto;
+    top: auto;
+    background: var(--panel-bg);
+    display: block;
+    transition: none;
+  }
+  .details-panel.open {
+    right: auto;
+    opacity: 1;
   }
   .details-header {
     padding: 0 6px;
